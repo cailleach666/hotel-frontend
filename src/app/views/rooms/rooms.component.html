@@ -1,0 +1,51 @@
+<app-intro
+  [backgroundImages]=" 'rooms' "
+  [heading1]="'EXPLORE'"
+  [heading2]="'OUR'"
+  [heading3]=" 'ROOMS' "
+  [paragraph]="'Find a room that perfectly fits your needs and enjoy your stay!'"
+  [buttonText]="'DISCOVER'"
+  [navigateTo]="'/roomsBooking'">
+</app-intro>
+<div class="second-section mt-5" id="second-section">
+  <div class="container">
+    <div class="second-section-wrapper">
+      <h3 class="d-flex justify-content-center mb-1 pt-2 pb-2 fs-3 fw-bold text-center">
+        ROOMS AND RATES
+      </h3>
+      <h3 class="d-flex justify-content-center mb-5 pt-5 pb-5 fs-5 fw-bold text-center">
+        {{ longText }}
+      </h3>
+      <app-rooms-container title="SINGLE ROOM"
+                           description="{{ singleRoom }}"
+                           buttonText="SEE OPTIONS"
+                           [backgroundImages]="'single'"
+                           [navigateTo]="'/roomsBooking'">
+      </app-rooms-container>
+      <app-rooms-container title="DOUBLE ROOM"
+                           description="{{ doubleRoom }}"
+                           buttonText="SEE OPTIONS"
+                           [backgroundImages]="'double'"
+                           navigateTo="/roomsBooking">
+      </app-rooms-container>
+      <app-rooms-container title="TWIN ROOM"
+                           description="{{ twinRoom }}"
+                           buttonText="SEE OPTIONS"
+                           [backgroundImages]="'twin'"
+                           navigateTo="/roomsBooking">
+      </app-rooms-container>
+      <app-rooms-container title="DELUXE ROOM"
+                           description="{{ luxuryRoom }}"
+                           buttonText="SEE OPTIONS"
+                           [backgroundImages]="'luxury'"
+                           navigateTo="/roomsBooking">
+      </app-rooms-container>
+      <h3 class="d-flex justify-content-center mb-1 pt-2 pb-2 fs-3 fw-bold text-center">
+        Testimonials
+      </h3>
+      <h3 class="d-flex justify-content-center mb-5 pt-5 pb-5 fs-5 fw-bold text-center">
+        "Calm, Serene, Retro – What a way to relax and enjoy"
+      </h3>
+    </div>
+  </div>
+</div>

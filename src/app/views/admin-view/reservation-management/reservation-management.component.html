@@ -1,0 +1,45 @@
+<div class="container">
+  <div>
+    <div>
+      <h3 class="mt-5">Reservations</h3>
+      <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+        <tr>
+          <th>Reservation Id</th>
+          <th>Check-in Date</th>
+          <th>Check-out Date</th>
+          <th>Total price</th>
+          <th>Number of Guests</th>
+          <th>Status</th>
+          <th>Client ID</th>
+          <th>Room ID</th>
+          <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let reservation of reservations">
+          <td>{{ reservation.id }}</td>
+          <td>{{ reservation.checkInDate }}</td>
+          <td>{{ reservation.checkOutDate }}</td>
+          <td>{{ reservation.totalPrice }}</td>
+          <td>{{ reservation.numberOfGuests }}</td>
+          <td>{{ reservation.status }}</td>
+          <td>{{ reservation.clientId }}</td>
+          <td>{{ reservation.roomId }}</td>
+
+          <td>
+            <div class="button-container">
+              <button
+                class="btn btn-danger btn-fixed ms-2"
+                (click)="onDeleteReservation(reservation)"
+              >
+                Delete
+              </button>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

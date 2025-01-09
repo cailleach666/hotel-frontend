@@ -1,0 +1,17 @@
+<div class="main-section" [ngStyle]="{'background-image': 'url(' + backgroundImage + ')'}">
+  <div class="container">
+    <div class="main-section-wrapper">
+      <div class="intro-text text-center text-lg-start">
+        <h2 *ngIf="heading1" class="fs-1 text-white">{{ heading1 }}</h2>
+        <h1 *ngIf="heading2" class="fw-bold text-white">{{ heading2 }}</h1>
+        <h3 *ngIf="heading3" class="fw-bold text-white mb-3">{{ heading3 }}</h3>
+        <h4 *ngIf="paragraph" class="text-white">{{ paragraph }}</h4>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button class="main-btn book-now-btn fs-4 fw-bold text-white" (click)="navigate()">
+          {{ buttonText }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

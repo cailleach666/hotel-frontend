@@ -1,0 +1,115 @@
+<div class="container mt-lg-5">
+    <div class="row justify-content-center">
+        <!-- Form Section -->
+        <div class="col-md-4">
+            <h3>Create a New Room</h3>
+            <form [formGroup]="roomForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="roomNumber">Room Number</label>
+                    <input
+                            type="text"
+                            id="roomNumber"
+                            class="form-control"
+                            formControlName="roomNumber"
+                            required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input
+                            type="number"
+                            id="price"
+                            class="form-control"
+                            formControlName="price"
+                            required
+                    />
+                </div>
+                <div class="form-group mt-2">
+                    <label for="available">Available</label>
+                    <input
+                            type="checkbox"
+                            id="available"
+                            formControlName="available"
+                            class="form-check-input"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="roomNumber">Room Type</label>
+                    <select type="text"
+                            id="type"
+                            formControlName="type"
+                            class="form-control"
+                            required>
+                        <option *ngFor="let type of roomTypes" [value]="type">{{ type }}</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary m-3" [disabled]="roomForm.invalid">
+                    Create Room
+                </button>
+            </form>
+        </div>
+      <!-- Form Section for Creating Multiple Rooms -->
+      <div class="col-md-4">
+        <h3>Create Multiple Rooms</h3>
+        <form [formGroup]="multipleRoomsForm" (ngSubmit)="onSubmitCreateMultipleRooms()">
+          <div class="form-group">
+            <label for="startRoomNumber">Start Room Number</label>
+            <input
+              type="text"
+              id="startRoomNumber"
+              class="form-control"
+              formControlName="startRoomNumber"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="numberOfRooms">Number of Rooms</label>
+            <input
+              type="number"
+              id="numberOfRooms"
+              class="form-control"
+              formControlName="numberOfRooms"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input
+              type="number"
+              id="multiple-price"
+              class="form-control"
+              formControlName="price"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="type">Room Type</label>
+            <select
+              type="text"
+              id="multiple-type"
+              formControlName="type"
+              class="form-control"
+              required
+            >
+              <option *ngFor="let type of roomTypes" [value]="type">{{ type }}</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-secondary m-3" [disabled]="multipleRoomsForm.invalid">
+            Create Multiple Rooms
+          </button>
+        </form>
+      </div>
+    </div>
+</div>
+<app-room-list>
+
+</app-room-list>
+<div class="container mt-lg-2">
+    <h3>Delete All Rooms</h3>
+    <form (ngSubmit)="onSubmitDeleteAllRooms()">
+      <button type="submit" class="btn btn-danger delete-all">
+        Delete All Rooms
+      </button>
+    </form>
+</div>

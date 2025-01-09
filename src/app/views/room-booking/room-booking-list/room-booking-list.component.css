@@ -1,0 +1,150 @@
+.btn-fixed {
+  width: 100px;
+  text-align: center;
+}
+
+.update-btn {
+  background-color: #E0B973;
+  border-color: #E0B973;
+  color: #ffffff;
+}
+
+.update-btn:hover {
+  background-color: #cba65f;
+  border-color: #cba65f;
+}
+
+.fixed-column {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pagination-btn {
+  background-color: #E0B973;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination-btn:hover {
+  background-color: #cba65f;
+  border-color: #cba65f;
+}
+
+.pagination-btn:disabled {
+  background-color: #d3d3d3;
+  cursor: not-allowed;
+}
+
+table.table {
+  width: 100%;
+  table-layout: fixed;
+  margin-top: 30px;
+}
+
+.table input {
+  width: 100%;
+}
+
+.th,td {
+  padding: 12px;
+  text-align: left;
+}
+
+.empty-row td {
+  height: 62px;
+  border: 1px solid #dee2e6;
+}
+
+.room-info-popup {
+  position: absolute;
+  width: 900px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  z-index: 1000;
+  top: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.room-info-popup .row.mb-3.mt-3 .col-form-label {
+  margin-bottom: 5px;
+}
+
+.room-info-popup .row.mb-3.mt-3 .col-sm-4 {
+  padding-top: 0;
+}
+
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.blocked {
+  background-color: red;
+  color: white;
+  padding: 5px;
+}
+
+.amenities-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px;
+}
+
+.amenity-item {
+  background-color: #a8a9e4;
+  color: #333;
+  padding: 4px 12px;
+  border-radius: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: default;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.availability-container {
+  margin-top: 16px;
+  padding: 8px 16px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.availability-container h4 {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+.availability-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.availability-container li {
+  padding: 4px 0;
+  font-size: 14px;
+  color: #555;
+}

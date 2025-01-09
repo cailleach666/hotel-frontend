@@ -1,0 +1,33 @@
+.admin-page-container {
+  justify-content: center;
+}
+
+h1 {
+  margin-left: 50px;
+}
+
+.update-btn {
+  background-color: #E0B973;
+  border-color: #E0B973;
+  color: #ffffff;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.update-btn:hover {
+  background-color: #cba65f;
+  border-color: #cba65f;
+}
+
+.button-group-spacing {
+  margin-top: 20px;
+  margin-left: 150px;
+  margin-right: 150px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.btn-group .btn {
+  margin-top: 5px;
+}

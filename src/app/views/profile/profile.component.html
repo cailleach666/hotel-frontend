@@ -1,0 +1,153 @@
+<app-intro
+  [backgroundImages]=" 'painting' "
+  [heading1]="'EXPLORE'"
+  [heading2]="'OUR'"
+  [heading3]= " 'ROOMS' "
+  [paragraph]="'Find a room that perfectly fits your needs and enjoy your stay!'"
+  [buttonText]="'DISCOVER'"
+  [navigateTo]="'/rooms'">
+</app-intro>
+<br>
+<div class="container mb-lg-3">
+  <h1 class="text-center">Profile</h1>
+
+<!--      <p><strong>Client ID:</strong> {{ clientId }}</p>-->
+      <div class="d-flex">
+        <button class="btn btn-danger logout ms-auto"
+                (click)="logout()">
+          Logout
+        </button>
+      </div>
+      <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+        <div class="d-flex flex-column align-items-center gap-2">
+          <div class="form-group col-md-4">
+            <label for="firstName">First Name</label>
+            <input type="text"
+                   class="form-control"
+                   id="firstName"
+                   formControlName="firstName" [readonly]="!isEditing">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="lastName">Last Name</label>
+            <input type="text"
+                   class="form-control"
+                   id="lastName"
+                   formControlName="lastName"
+                   [readonly]="!isEditing">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="email">Email</label>
+            <input type="email"
+                   class="form-control"
+                   id="email"
+                   formControlName="email"
+                   [readonly]="!isEditing">
+          </div>
+
+          <div class="form-group mb-lg-3 col-md-4">
+            <label for="phone">Phone</label>
+            <input type="text"
+                   class="form-control mb-lg-3 phone-input"
+                   id="phone"
+                   formControlName="phone"
+                   [readonly]="!isEditing">
+          </div>
+        </div>
+        <div class="button-container gap-5 d-flex">
+          <button type="submit"
+                  class="btn btn-primary"
+                  [disabled]="!isEditing">
+            Save Changes
+          </button>
+          <button type="button"
+                  class="btn btn-secondary phone-input"
+                  (click)="onEditClick()">
+            {{ isEditing ? 'Cancel' : 'Change Info' }}
+          </button>
+
+        </div>
+      </form>
+
+
+
+      <h3 class="mt-5">Your Reservations</h3>
+      <table class="table table-striped mt-3 mb-0">
+        <thead>
+        <tr>
+          <th>Room Number</th>
+          <th>Number of Guests</th>
+          <th>Check-In</th>
+          <th>Check-Out</th>
+          <th>Total price</th>
+          <th>Confirm</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let reservation of reservations">
+          <td class="align-middle">{{ roomNumbers[reservation.roomId] }}</td>
+          <td>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="reservation.numberOfGuests"
+              [disabled]="!editModes[reservation.id]"
+            />
+          </td>
+
+          <td>
+            <input
+              class="form-control"
+              [(ngModel)]="reservation.checkInDate"
+              [disabled]="!editModes[reservation.id]"
+            />
+          </td>
+          <td>
+            <input
+              class="form-control"
+              [(ngModel)]="reservation.checkOutDate"
+              [disabled]="!editModes[reservation.id]"
+            />
+          </td>
+          <td class="align-middle">{{ reservation.totalPrice }}€</td>
+
+          <td *ngIf="reservation.status === 'UNCONFIRMED'">
+            <button
+              class="btn btn-primary"
+              (click)="confirmReservation(reservation)"
+            >
+              Confirm
+            </button>
+          </td>
+
+          <td *ngIf="reservation.status === 'CONFIRMED'">
+            <p class="fw-bold pt-2 pb-2 rounded text-success m-0 ">Confirmed</p>
+          </td>
+
+          <td *ngIf="reservation.status === 'UNCONFIRMED'">
+            <button
+              class="btn btn-primary update-btn"
+              (click)="toggleEdit(reservation)"
+            >
+              {{ editModes[reservation.id] ? 'Save' : 'Update' }}
+            </button>
+          </td>
+          <td *ngIf="reservation.status === 'CONFIRMED'"></td>
+
+          <td *ngIf="reservation.status === 'UNCONFIRMED'">
+            <button
+              class="btn btn-danger"
+              (click)="deleteReservation(reservation.id)"
+            >
+              Delete
+            </button>
+          </td>
+          <td *ngIf="reservation.status === 'CONFIRMED'"></td>
+
+        </tr>
+        </tbody>
+      </table>
+    </div>

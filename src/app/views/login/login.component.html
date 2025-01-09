@@ -1,0 +1,42 @@
+<div class="login-section d-flex align-items-center" [ngStyle]="{'background-image': 'url(' + backgroundImage + ')'}">
+  <app-back-button></app-back-button>
+  <div class="container">
+    <div class="login-wrapper d-flex justify-content-center">
+      <form [formGroup]="clientForm" (ngSubmit)="onSubmit()" class="col-7 col-md-5 d-flex flex-column">
+        <h1 class="text-center text-white">Log in</h1>
+        <div class="form-group">
+          <label for="inputEmail"></label>
+          <input formControlName="email" type="email" class="form-control form-control-lg" id="inputEmail" placeholder="Email">
+        </div>
+        <div *ngIf="formSubmitted && clientForm.get('email')?.invalid" class="text-danger text-shadow">
+          Email is required.
+        </div>
+
+<!--        <app-password-field fieldText="Password"></app-password-field>-->
+        <div class="form-group inner-addon inner right-addon position-relative">
+          <label for="inputPassword"></label>
+          <input formControlName="password" name="password"
+                 [type]="showPassword ? 'text' : 'password'"
+                 class="form-control form-control-lg pwd-control"
+                 id="inputPassword" placeholder="Password">
+          <i alt="show" class="far fa-eye"
+             (click)="showPassword = !showPassword"
+             [class.hide]="showPassword"></i>
+          <i alt="hide" class="far fa-eye-slash"
+             (click)="showPassword = !showPassword"
+             [class.hide]="!showPassword"></i>
+        </div>
+        <div *ngIf="formSubmitted && clientForm.get('password')?.invalid" class="text-danger text-shadow">
+          Password is required.
+        </div>
+
+        <button type="submit" class="main-btn login-btn mt-5 fs-5 p-2">Log in</button>
+        <app-auth-button
+          anotherAuth="{{registerLink}}"
+          text="Don't have an account? "
+          buttonText="Sign up"
+        ></app-auth-button>
+      </form>
+    </div>
+  </div>
+</div>

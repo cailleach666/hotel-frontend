@@ -1,0 +1,15 @@
+<app-intro
+  [backgroundImages]=" 'rooms' "
+  [heading1]="'EXPLORE'"
+  [heading2]="'OUR'"
+  [heading3]= " 'ROOMS' "
+  [paragraph]="'Find a room that perfectly fits your needs and enjoy your stay!'"
+  [buttonText]="'DISCOVER'"
+  [navigateTo]="'/rooms'">
+</app-intro>
+<button class="back-button mt-lg-5 mt-4" (click)="goBack()">
+  Go Back
+</button>
+<app-room-booking-list>
+</app-room-booking-list>
+<br>

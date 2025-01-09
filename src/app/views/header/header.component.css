@@ -1,0 +1,10 @@
+li:hover {
+  color: #b0b0b0;
+}
+
+@media (max-width: 767px) {
+  .logo img {
+    height: 70%;
+    width: 70%;
+  }
+}

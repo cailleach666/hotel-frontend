@@ -1,0 +1,8 @@
+.back-btn {
+  transition: ease 0.3s;
+  width: 40px
+}
+
+.back-btn:hover {
+  width: 45px;
+}

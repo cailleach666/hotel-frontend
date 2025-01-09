@@ -1,0 +1,172 @@
+<div class="container mt-lg-5">
+  <h3>Create a New Amenity</h3>
+  <form [formGroup]="amenityForm" (ngSubmit)="onSubmit()">
+    <div class="row align-items-center">
+        <div class="col-md-3 form-group">
+          <label for="name">Amenity Name</label>
+          <input
+            type="text"
+            id="name"
+            class="form-control"
+            formControlName="name"
+            required
+          />
+        </div>
+        <div class="col-md-4 form-group description-wrapper">
+          <label for="description">Description</label>
+          <textarea
+            id="description"
+            class="form-control"
+            formControlName="description"
+            rows="1"
+            style="height: calc(2.25rem + 2px);"
+            required
+          ></textarea>
+        </div>
+        <div class="col-md-3 form-group">
+          <label for="additionalCost">Additional Cost</label>
+          <input
+            type="number"
+            id="additionalCost"
+            class="form-control"
+            formControlName="additionalCost"
+            required
+          />
+        </div>
+      <div class="col-md-2">
+          <button
+            type="submit"
+            class="btn btn-primary m-3 update-btn"
+            [disabled]="amenityForm.invalid">
+            Create Amenity
+          </button>
+      </div>
+    </div>
+  </form>
+  </div>
+<div class="container">
+    <h2 class="mb-3">Amenity List</h2>
+    <!-- Table for Amenities -->
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+      <tr>
+        <th style="width: 10%;">Amenity ID</th>
+        <th style="width: 10%;">Name</th>
+        <th style="width: 30%;">Description</th>
+        <th style="width: 10%;">Cost(€)</th>
+        <th style="width: 13%;">Update</th>
+        <th style="width: 13%;">Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let amenity of paginatedAmenities; let i = index">
+        <td>{{ amenity.id }}</td>
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="amenity.name"
+            [disabled]="!editModes[amenity.id]"
+          />
+        </td>
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="amenity.description"
+            [disabled]="!editModes[amenity.id]"
+          />
+        </td>
+        <td>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="amenity.additionalCost"
+            [disabled]="!editModes[amenity.id]"
+          />
+        </td>
+        <td>
+          <button
+            class="btn btn-primary update-btn btn-fixed"
+            (click)="toggleEdit(amenity)"
+          >
+            {{ editModes[amenity.id] ? 'Save' : 'Update' }}
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-danger btn-fixed"
+            (click)="deleteAmenity(amenity.id)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+
+      <tr *ngFor="let empty of emptyRows(paginatedAmenities.length)" class="empty-row">
+        <td colspan="6">&nbsp;</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="pagination-controls">
+      <button class="pagination-btn btn-fixed"
+              (click)="previousPage()"
+              [disabled]="currentPage === 0">
+        Previous
+      </button>
+      <span>Page {{ currentPage + 1 }}</span>
+      <button class="pagination-btn btn-fixed"
+              (click)="nextPage()"
+              [disabled]="(currentPage + 1) * maxRowsPerPage >= amenities.length">
+        Next
+      </button>
+    </div>
+</div>
+<div class="container mt-lg-2">
+  <!-- Table for assigning Amenities -->
+  <h3>Assign Amenity to Room and Remove Amenity From the Room</h3>
+  <form [formGroup]="assignAmenityForm">
+    <div class="row align-items-center">
+      <div class="col-md-4 form-group">
+        <label for="roomNumber">Room Number</label>
+        <select
+          id="roomNumber"
+          class="form-control"
+          formControlName="roomNumber">
+          <option *ngFor="let room of rooms" [value]="room.roomNumber">
+            {{ room.roomNumber }}
+          </option>
+        </select>
+      </div>
+      <div class="col-md-4 form-group">
+        <label for="amenity">Amenity</label>
+        <select
+          id="amenity"
+          class="form-control"
+          formControlName="amenityId"
+          required>
+          <option *ngFor="let amenity of amenities" [value]="amenity.id">
+            {{ amenity.name }}
+          </option>
+        </select>
+      </div>
+      <div class="col-md-4 d-flex justify-content-between">
+        <button
+          type="submit"
+          class="btn btn-primary m-3 update-btn1"
+          [disabled]="assignAmenityForm.invalid"
+          (click)="onAssignAmenity()">
+          Assign Amenity
+        </button>
+        <button
+          type="submit"
+          class="btn btn-warning m-3 update-btn2"
+          [disabled]="assignAmenityForm.invalid"
+          (click)="onDeleteAmenityFromRoom()">
+          Remove Amenity
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

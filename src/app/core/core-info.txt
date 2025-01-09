@@ -1,0 +1,5 @@
+The singleton services should be implemented here that have to have one and only one instance per application. The Module contains an Authentication service and static components like the header, footer, navbar, sidebar, interceptors, guard, constants, enums, utils, and universal models.
+
+One must import the core module only in the app root module. Other modules must not import the core module.
+
+Delete later this file.

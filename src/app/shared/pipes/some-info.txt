@@ -1,0 +1,10 @@
+Using methods to transform data in Angular templates is not considered good
+practice primarily due to performance and maintainability concerns. When methods
+are called in templates, they can be executed multiple times during Angular's
+change detection cycle, which may lead to unnecessary computations and slow down
+the rendering process. In contrast, pipes are designed to be pure functions that
+only execute when their input data changes, resulting in more efficient rendering.
+Moreover, pipes promote a cleaner separation of concerns by keeping transformation
+logic out of the template, making the code easier to read and maintain. They also
+enhance reusability, as custom pipes can be applied across various components
+without duplicating logic.

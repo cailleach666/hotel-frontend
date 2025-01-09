@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: Montserrat serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 333px;
+}
+
+.main-btn {
+  background: #E0B973;
+  border: none;
+  transition: ease 0.3s;
+  border-radius: 5px;
+}
+
+.main-btn:hover {
+  background: #9a8252;
+}
+
+.main-btn:active {
+  background: #645133;
+}

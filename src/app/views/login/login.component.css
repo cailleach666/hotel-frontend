@@ -1,0 +1,24 @@
+.login-section {
+  min-height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hide {
+  display: none;
+}
+
+.inner-addon .far {
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  top: 55%;
+  padding-right: 15px;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.99);
+}
+

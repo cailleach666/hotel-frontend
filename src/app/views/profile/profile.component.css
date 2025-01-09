@@ -1,0 +1,71 @@
+table.table {
+  width: 100%;
+  margin-top: 30px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+button.mat-raised-button {
+  font-size: 16px;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+.table input[disabled] {
+  background-color: transparent;
+  border: none;
+  color: #000;
+}
+.table input {
+  width: 100%;
+}
+
+.btn-fixed {
+  width: 100px;
+  text-align: center;
+}
+
+.btn-fixed-up {
+  width: 100px;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.update-btn {
+  background-color: #E0B973;
+  border-color: #E0B973;
+  color: #ffffff;
+  width: 80px;
+}
+
+.update-btn:hover {
+  background-color: #cba65f;
+  border-color: #cba65f;
+  width: 80px;
+}
+
+.logout {
+  width: 100px;
+}
+
+.logout:hover {
+  background-color: #811923;
+  width: 100px;
+}
+
+.profile-section {
+  height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 200px;
+}

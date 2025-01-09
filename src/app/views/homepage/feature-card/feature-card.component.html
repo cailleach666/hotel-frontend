@@ -1,0 +1,10 @@
+<div class="d-flex flex-column flex-lg-row mb-5 pb-5">
+  <div class="d-flex flex-column me-0 me-lg-5 mb-5 align-items-center align-items-lg-start">
+    <h3 class="mb-4 fs-1 fw-bold text-center">{{ title }}</h3>
+    <p class="mb-5 fs-5 text-center text-lg-start">{{ description }}</p>
+    <button class="main-btn explore-btn fs-5 text-white" (click)="navigate()">{{ buttonText }}</button>
+  </div>
+  <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
+    <img [src]="imageSrc" [alt]="title" class="homepage-pic img-fluid pt-lg-0 pt-5">
+  </div>
+</div>

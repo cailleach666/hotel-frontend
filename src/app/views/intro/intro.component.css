@@ -1,0 +1,57 @@
+h1, h2, h3, h4, p, button {
+  color: #14274A;
+}
+
+.main-section {
+  height: 920px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.main-section-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.intro-text {
+  padding-top: 300px;
+}
+
+.intro-text h1 {
+  font-family: "Adobe Garamond Pro", serif;
+  font-size: 90px;
+  letter-spacing: 11px;
+}
+
+.intro-text h3 {
+  font-family: "Adobe Garamond Pro", serif;
+  font-size: 60px;
+  letter-spacing: 24px;
+}
+
+@media (max-width: 767px) {
+  .intro-text h1 {
+    font-size: 60px;
+  }
+
+  .intro-text {
+    padding-top: 250px;
+  }
+
+  .intro-text h3 {
+    font-size: 40px;
+  }
+}
+
+.intro-text h4 {
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.main-btn {
+  width: 268px;
+  height: 78px;
+  margin-top: 100px;
+}

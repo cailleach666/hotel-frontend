@@ -1,0 +1,15 @@
+.footer {
+  background: #14274A;
+}
+
+.contact-info p {
+  letter-spacing: 2px;
+}
+
+.navbar li {
+  letter-spacing: 2px;
+}
+
+.navbar li:hover {
+  color: #b0b0b0;
+}
