@@ -1,5 +1,7 @@
 # Hotel Room Booking Management System - Frontend
 
+There are screenshots attached to the wiki pages.
+
 ## Overview
 This is the frontend application for the Hotel Room Booking Management System, built using Angular. It provides a user-friendly interface for managing hotel room bookings.
 
